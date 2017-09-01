@@ -1,0 +1,263 @@
+@charset "utf-8";
+/*CSS DOCUMENT*/
+input,textarea{margin:0;padding:0;border:none; outline:none;}
+textarea{ resize:none; overflow:auto;}
+em{ font-style:normal;}
+ul{margin:0;padding:0; list-style:none;}
+h1,p,h2{margin:0; font-weight:normal;}
+a,input{-webkit-tap-highlight-color:rgba(255,0,0,0);}
+img{ border:none; vertical-align:top;}
+body{margin:0;position:relative; font-family:Arial,"微软雅黑";color:#666; font-size:26px; height: 1200px;}
+.page{ position:absolute; left:0;top:0;width:100%;height:100%; overflow:auto; background-color:#fff; z-index:1; display:none;}
+.pageShow{ display:block;}
+.page:nth-of-type(1){ z-index:10;}
+.page:nth-of-type(2){ z-index:9;}
+.page:nth-of-type(3){ z-index:8;}
+.page:nth-of-type(4){ z-index:7;}
+.page:nth-of-type(5){ z-index:6;}
+
+/*欢迎页*/
+#welcome{transition:2s;}
+@-webkit-keyframes tree{/*class为tree的动画效果*/
+	100%{
+		-webkit-transform: translateY(0px);
+		opacity: 1;
+	}
+}
+@keyframes tree{
+	100%{
+		transform: translateY(0px);
+		opacity: 1;
+	}
+}
+
+@-webkit-keyframes logo{/*ID为logo的动画效果*/
+	100%{
+		opacity: 1;
+	}
+}
+@-webkit-keyframes shake{
+	0%{
+		-webkit-transform:rotate(0deg);/*水平转动0*/
+	}
+	20%{
+		-webkit-transform:rotate(30deg);/*水平转动20*/
+	}
+	40%{
+		-webkit-transform:rotate(-20deg);/*水平倒转30度*/
+	}
+	60%{
+		-webkit-transform:rotate(15deg);/*水平正转20度*/
+	}
+	80%{
+		-webkit-transform:rotate(-8deg);/*水平倒转10度*/
+	}
+	100%{
+		-webkit-transform:rotate(0deg);/*水平倒转30度*/
+	}
+}
+
+@-webkit-keyframes cloud{
+	0%{/*百分数是动画时间*/
+		transform:translateX(0px);
+		-webkit-transform:translateX(0px);
+	}
+	100%{
+		-webkit-transform:translateX(-50px);
+	}
+}
+
+.tree{
+	position: absolute;
+	left: 0;
+	top: 10%;/*距离顶部10%*/
+	width: 100%;
+	-webkit-transform: translateY(100px);
+	transform: translateY(100px);
+	opacity: 0;
+	animation: 1s tree;
+	-webkit-animation: 1s tree;
+	animation-fill-mode:forwards;
+	-webkit-animation-fill-mode:forwards;
+}
+
+#logo{
+	text-align:center;
+	position: absolute;
+	left: 0;
+	width: 100%;
+	bottom: 5%;/*定位后，图片距离底部5%*/
+	opacity: 0;
+	-webkit-animation: logo .5s 1s;
+		animation-fill-mode:forwards;
+	-webkit-animation-fill-mode:forwards;
+
+}
+.welcome2{
+	position: relative;
+	padding-top: 50px;
+	opacity: 0;
+	transform: translateY(50px);
+	/*translateY() ：通过给定Y方向的数目指定一个translation。只向Y轴进行移动，基点在元素心点，可以通过transform-origin改变基点位置*/
+	animation:1s .3s tree;
+	animation-fill-mode:forwards;/*把物体动画地从一个地方移动到另一个地方，并让它停留在那里：*/
+}
+.shake{
+	position: absolute;
+	left: 509px;
+	top: 12px;
+	width: 28px;
+	height: 31px;
+	background: url(image/shake.png) no-repeat;
+	-webkit-transform-origin:left bottom;
+	transform-origin:left bottom;
+	-webkit-animation:shake .3s 2s;/*执行shake动画*/
+	animation:shake .3s 1s;
+}
+
+.tree3{
+	padding-top: 20px;
+	opacity: 0;
+	transform: translateY(30px);
+	/*translateY() ：通过给定Y方向的数目指定一个translation。只向Y轴进行移动，基点在元素心点，可以通过transform-origin改变基点位置*/
+	animation:1s .6s tree;/*迟延0.6秒后执行 引用tree上设置的动画*/
+	animation-fill-mode:forwards;
+}
+.cloud{
+	position: absolute;
+	background: url(image/cloud.png) no-repeat;
+	background-size:contain;
+}
+.cloud:nth-of-type(1){
+	left: 432px;
+	top: 15px;
+	width: 58px;
+	height: 44px;
+	animation: cloud 2s 1.5s infinite alternate;
+	-webkit-animation: cloud 2s 1.5s infinite alternate linear;
+}
+
+.cloud:nth-of-type(2){
+	left: 79px;/*第二个图的到最左边距离*/
+	top: 15px;/*图的顶部到父元素图的最上面的高度距离*/
+	width: 91px;
+	height: 70px;
+	animation: cloud 3s 1s infinite alternate;
+	-webkit-animation: cloud 3s 1s infinite alternate linear;
+}
+
+.cloud:nth-of-type(3){
+	left: 402px;/*第三个图的到父元素最左边距离*/
+	top: 142px;/*图的顶部到父元素图的最上面的高度距离*/
+	width: 54px;
+	height: 41px;
+	animation: cloud 2s 0.5s infinite alternate;/*infinate代表循环动作 alternate达到往返效果 */
+	-webkit-animation: cloud 2s 0.5s infinite alternate linear;/*这里的1s是速度快慢 延迟0.5s*/
+}
+
+
+/*首页部分*/
+#index{ transition:0.5s;}
+#tabPic{ 
+	overflow:hidden;/*五张轮播图是撑开的，要用overflow hidden放在一个框里*/
+ position:relative;/*父元素轮播区要用relative定位*/
+ }
+#picList{ 
+	overflow:hidden;
+width:500%;
+/*-webkit-transform: translateX(-100px);/*图像水平左移100像素*/
+}
+#picList li{
+	float:left; /*每一张轮播图浮动横排*/
+width:20%;}
+#picList img{ width:100%; 
+height:342px;}
+.picMask{height:102px; 
+position:absolute;
+left:0;bottom:0;width:100%; 
+background:-webkit-linear-gradient(bottom,rgba(0,0,0,0.9) 0,rgba(0,0,0,0.8) 10%,rgba(0,0,0,0));background:linear-gradient(bottom,rgba(0,0,0,0.9) 0,rgba(0,0,0,0.8) 20%,rgba(0,0,0,0));}
+.picMask p{ font-size:29px; 
+line-height:120px; /*字体行高*/
+text-indent:26px; /*文字缩进26像素*/
+color:#fff;}
+.picMask nav{height:10px; 
+right:26px; /*距离右边26像素*/
+top:56px; /*距离顶部56像素*/
+position:absolute;}
+.picMask nav a{float:left;
+width:10px;
+height:10px;
+ border-radius:5px;/*border-radius:5px 如果百分之50不支持，就写像素5px*/
+ background:#fff; 
+ opacity:0.5;
+ margin-left:15px;}
+.picMask nav a.active{ 
+	opacity:1;}
+
+/*评分处*/
+
+#score{ line-height:60px;padding:17px 0 22px 26px; border-bottom:1px solid #e5e5e5;}
+#score h2{ font-size:28px;}
+#score li{height:60px; position:relative;}
+#score nav{
+	position: absolute;
+	left: 187px;
+	top: 12px;
+}
+#score nav a{/*空心小星星 精灵图*/
+	float: left;
+	background: url(image/star.png) no-repeat -38px 0;
+	width: 38px;
+	height: 38px;
+	margin-right: 39px;
+	transition: .3s;/*过渡动画0.3秒*/
+}
+#score nav .active{/*黄色小星星*/
+	background: url(image/star.png) no-repeat 0 0;
+	
+}
+/*点评*/
+.tags{padding: 21px 0 0 26px;}/*上 右 下左*/
+.tags h2{line-height: 54px;
+font-size: 28px;}
+
+.tags label{
+	float: left;
+	line-height: 50px;
+	margin: 10px 14px 10px 3px;
+}
+.tags label input{
+	display: none;
+}
+.tags label span{
+	float: left;
+	border: 1px solid #cdd6e1;
+	padding: 0 24px;
+	border-radius: 26px;
+}
+.tags input:checked+span{border-color:#3c9bbb;/*选择紧邻前面的标签为选中的checkbox（input type=checkbox）的span标签（选择器选的是ol而不是input）*/
+background-color:#3c9bbb;
+color: #fff;
+}
+.btn{
+	position: absolute;
+	bottom: 17px;
+	left: 17px;
+	width: 606px;
+	height: 74px;
+	font-size: 30px;
+	background: #cacaca;
+	border-radius: 5px;
+}
+.info{
+	font-size: 26px;
+	line-height: 60px;
+	text-align: center;
+	width: 100%;
+	position: absolute;
+	bottom: 90px;
+	-webkit-transform-origin:bottom;
+	-webkit-transform:scale(0);
+	transition: 0.5;
+	opacity: 0;
+}

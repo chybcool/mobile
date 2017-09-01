@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=640,user-scalable=no" />
+		<title></title>
+  <link rel="stylesheet" href="index.css" />
+		<script src="index.js"></script>
+	</head>
+	<body>
+		<script>
+			document.body.style.height=view().h+"px";
+		</script>	
+		<section class="page pageShow" id="welcome" >
+	<div class="tree">
+    	<img src="image/tree.jpg" alt="" />
+        <div class="welcome2">
+        	<img src="image/title.png" />
+            <span class="shake"></span>
+        </div>
+        <img src="image/title2.png" class="tree3" />
+        <span class="cloud"></span>
+        <span class="cloud"></span>
+        <span class="cloud"></span>
+        <!--在同一个div块内，父DIV定位absolute，子类cloud定位absolude,高度和左距离都是子类针对当前的父元素高左距离<-->
+    </div>
+    <h1 id="logo">
+    	<img src="image/logo.png" />
+    </h1>
+</section>
+<script>
+	fnLoad();
+</script>
+		<section class="page">上传成功</section>
+		<section class="page">表单页</section>
+		<section class="page">新闻页</section>
+		<section class="page">跳转页</section>
+			<section class="page pageShow"><!--首页-->
+				<section id="tabPic">
+					<ul id="picList"><!--轮播图-->
+						<li><img src='image/1.jpg' /></li>
+						<li><img src='image/2.jpg' /></li>
+						<li><img src='image/3.jpg' /></li>
+						<li><img src='image/4.jpg' /></li>
+						<li><img src='image/5.jpg' /></li>
+					</ul>
+					<section class="picMask">
+						<p>成都九寨沟景区</p>
+						<nav><!--轮播小圆点-->
+							<a href="javascript:;" class="active"></a>
+							<a href="javascript:;"></a>
+							<a href="javascript:;"></a>
+							<a href="javascript:;"></a>
+							<a href="javascript:;"></a>
+						</nav>
+					</section>
+				</section>
+				<script>
+				fnTab();
+			</script>
+				 <!--<a href="javascript:;" class="newsBtn">
+        	<em>新闻线索</em>
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>-->
+        <section id="score"><!--添加分数-->
+            <h2>给景区评分</h2>
+            <ul class="scoreList">
+                <li>
+                    <span>综合印象</span>
+                    <nav>
+                        <a href="javascript:;"></a>
+                        <a href="javascript:;"></a>
+                        <a href="javascript:;"></a>
+                        <a href="javascript:;"></a>
+                        <a href="javascript:;"></a>
+                    </nav>
+                    <input type="hidden" value="0" />
+                </li>
+                <li>
+                    <span>服务指数</span>
+                    <nav>
+                        <a href="javascript:;"></a>
+                        <a href="javascript:;"></a>
+                        <a href="javascript:;"></a>
+                        <a href="javascript:;"></a>
+                        <a href="javascript:;"></a>
+                    </nav>
+                    <input type="hidden" value="0" />
+                </li>
+                <li>
+                    <span>消费指数</span>
+                    <nav>
+                        <a href="javascript:;"></a>
+                        <a href="javascript:;"></a>
+                        <a href="javascript:;"></a>
+                        <a href="javascript:;"></a>
+                        <a href="javascript:;"></a>
+                    </nav>
+                    <input type="hidden" value="0" />
+                </li>
+            </ul>
+        </section>
+        <script>
+			fnScore();
+		</script>
+		<section class="tags" id="indexTag"><!--添加标签-->
+			<h2>给景区添加标签</h2>
+			<label>
+				<input type="radio" name="tags" value="服务好" />
+				<span>服务好</span>
+			</label>
+						<label>
+				<input type="radio" name="tags" value="景色好" />
+				<span>景色好</span>
+			</label>
+						<label>
+				<input type="radio" name="tags" value="千篇一律" />
+				<span>千篇一律</span>
+			</label>
+						<label>
+				<input type="radio" name="tags" value="看人海" />
+				<span>看人海</span>
+			</label>
+						<label>
+				<input type="radio" name="tags" value="挤爆了" />
+				<span>挤爆了</span>
+			</label>
+			<!--...............................-->
+			<label>
+				<input type="radio" name="tags" value="服务好" />
+				<span>服务好</span>
+			</label>
+						<label>
+				<input type="radio" name="tags" value="景色好" />
+				<span>景色好</span>
+			</label>
+						<label>
+				<input type="radio" name="tags" value="千篇一律" />
+				<span>千篇一律</span>
+			</label>
+						<label>
+				<input type="radio" name="tags" value="看人海" />
+				<span>看人海</span>
+			</label>
+						<label>
+				<input type="radio" name="tags" value="挤爆了" />
+				<span>挤爆了</span>
+			</label>
+		</section>
+		
+
+		<p class="info"></p>
+		<input type="button"  value="提交" class="btn submit"/>
+			</section>
+		
+		
+		
+	</body>
+</html>
